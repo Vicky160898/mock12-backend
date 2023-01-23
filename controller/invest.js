@@ -12,11 +12,20 @@ app.post("/calculate", async (req, res) => {
   let M = Math.floor(F - 1 / i);
   let total = P * n;
   let Gain = Math.abs(M - total);
-//   console.log(M);
-//   console.log(total);
-//   console.log(Gain);
+  //   console.log(M);
+  //   console.log(total);
+  //   console.log(Gain);
   try {
-    return res.status(200).send({ M: M, total: total, Gain: Gain });
+    return res
+      .status(200)
+      .send({
+        M: M,
+        total: total,
+        Gain: Gain,
+        Amount: Amount,
+        Rate: Rate,
+        Years: Years,
+      });
   } catch (err) {
     return res.status(500).send(err.message);
   }
